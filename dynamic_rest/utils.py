@@ -1,5 +1,3 @@
-from django.utils.six import string_types
-
 FALSEY_STRINGS = (
     '0',
     'false',
@@ -8,7 +6,7 @@ FALSEY_STRINGS = (
 
 
 def is_truthy(x):
-    if isinstance(x, string_types):
+    if isinstance(x, str):
         return x.lower() not in FALSEY_STRINGS
     return bool(x)
 
